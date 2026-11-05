@@ -1418,8 +1418,9 @@ body{ font-family:'Mona Sans Variable','Microsoft YaHei',Arial,sans-serif;
         </svg>
         <div class="hs-row"><span class="status-dot" id="hsDot"></span><span data-hermes="status-label-hero">probing…</span></div>
         <div class="hs-tokens">
-          <div class="hs-tok"><b data-tok="claude">——</b><i>claude</i></div>
           <div class="hs-tok"><b data-tok="codex">——</b><i>codex</i></div>
+          <div class="hs-tok"><b data-tok="muse">——</b><i>muse</i></div>
+          <div class="hs-tok"><b data-tok="workbuddy">——</b><i>workbuddy</i></div>
           <div class="hs-tok"><b data-tok="deepseek">——</b><i>deepseek</i></div>
         </div>
         <div class="hs-cap">今日 tokens · 由 hermes 探测</div>
@@ -3698,13 +3699,14 @@ const DASH = {
   updatedAt: '手工快照 · 等待 Hermes 首次推送',
   online: false,
   statusLabel: 'offline · 等 hermes 探测',
-  tokensToday: { claude: 1840000, codex: 412000, deepseek: 96000 },
+  tokensToday: { codex: 1840000, muse: 412000, workbuddy: 96000, deepseek: 18000 },
   tokenSpark: {
-    claude:  [0.42, 0.61, 0.38, 0.85, 0.52, 0.94, 1.0],
-    codex:   [0.2, 0.45, 0.3, 0.6, 0.34, 0.5, 0.8],
-    deepseek:[0.5, 0.2, 0.65, 0.3, 0.45, 0.25, 0.6],
+    codex:     [0.42, 0.61, 0.38, 0.85, 0.52, 0.94, 1.0],
+    muse:      [0.2, 0.45, 0.3, 0.6, 0.34, 0.5, 0.8],
+    workbuddy: [0.5, 0.2, 0.65, 0.3, 0.45, 0.25, 0.6],
+    deepseek:  [0.18, 0.34, 0.24, 0.46, 0.31, 0.4, 0.56],
   },
-  usageToday: { claude: 326, hermes: 88, obsidian: 64, zen: 142, odysseus: 37 },
+  usageToday: { codex: 326, muse: 88, workbuddy: 64, deepseek: 18 },
   logs: [
     { date: '2026-06-11', items: ['个人站：三个子页 + 菜单转场 + 仪表盘上线', 'hero 退场按原站口径返工：缩到 0.45 + 近黑衬底 + 满幅签名'] },
     { date: '2026-06-10', items: ['hero v2：流体显形 + 多 agent 审查修了 17 条', '小红书卡片墙 + Build something cool 收尾屏'] },
@@ -3731,7 +3733,7 @@ function renderDash(d){
   const tg = document.getElementById('tokGrid');
   if (tg){
     tg.textContent = '';
-    for (const k of ['claude', 'codex', 'deepseek']){
+    for (const k of ['codex', 'muse', 'workbuddy', 'deepseek']){
       const card = document.createElement('div');
       card.className = 'tok-card'; card.setAttribute('data-rise', '');
       const spark = ((d.tokenSpark || {})[k] || []).map(v =>
