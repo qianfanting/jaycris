@@ -1508,11 +1508,10 @@ body{ font-family:'Mona Sans Variable','Microsoft YaHei',Arial,sans-serif;
       if(lb) lb.querySelectorAll('button').forEach(function(b){ b.addEventListener('click',function(){ lang=b.getAttribute('data-lang'); lb.querySelectorAll('button').forEach(function(x){ x.classList.toggle('on',x===b); }); applyLang(); }); });
 
       var AGENTS=[
-        {id:'claude',name:'CLAUDE',status:'active',tokens:'1.84M',share:'78%',progress:0.12,speed:0.020},
-        {id:'codex',name:'CODEX',status:'active',tokens:'412K',share:'18%',progress:0.46,speed:0.014},
-        {id:'deepseek',name:'DEEPSEEK',status:'idle',tokens:'96K',share:'4%',progress:0.70,speed:0.004},
-        {id:'hermes',name:'HERMES',status:'waiting',tokens:'18K',share:'<1%',progress:0.86,speed:0},
-        {id:'cai',name:'CAI',status:'error',tokens:'12K',share:'<1%',progress:0.30,speed:0}
+        {id:'codex',name:'CODEX',status:'active',tokens:'1.84M',share:'78%',progress:0.12,speed:0.020},
+        {id:'muse',name:'MUSE',status:'active',tokens:'412K',share:'18%',progress:0.46,speed:0.014},
+        {id:'workbuddy',name:'WORKBUDDY',status:'idle',tokens:'96K',share:'4%',progress:0.70,speed:0.004},
+        {id:'deepseek',name:'DEEPSEEK',status:'idle',tokens:'18K',share:'<1%',progress:0.86,speed:0.003}
       ];
       var ALERTS=[
         {lv:'red',tx:'Hermes 等待写入权限'},
