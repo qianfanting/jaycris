@@ -1497,7 +1497,7 @@ body{ font-family:'Mona Sans Variable','Microsoft YaHei',Arial,sans-serif;
       var sec=document.getElementById('status'); if(!sec) return;
       var NS='http://www.w3.org/2000/svg';
       // 车手品牌色（用户钦定）
-      var BRAND={claude:'#FF8A3D',codex:'#8FD6FF',deepseek:'#1E5CFF',hermes:'#FFFFFF',cai:'#B7FF00'};
+      var BRAND={codex:'#8FD6FF',muse:'#FF8A3D',workbuddy:'#B7FF00',deepseek:'#1E5CFF'};
       // i18n（轻量：只切模块标题 + 状态栏，通知/日志正文保持中文）
       var I18N={ zh:{time:'本地 · 北京',stint:'连续工作',tokens:'今日 token',standings:'模型排名',alerts:'通知中心',liveLog:'实时日志',live:'AI 车队实时'},
                  en:{time:'LOCAL · BJ',stint:'STINT',tokens:'TOKENS',standings:'MODEL STANDINGS',alerts:'ALERT FEED',liveLog:'LIVE LOG',live:'LIVE'} };
@@ -1514,13 +1514,13 @@ body{ font-family:'Mona Sans Variable','Microsoft YaHei',Arial,sans-serif;
         {id:'deepseek',name:'DEEPSEEK',status:'idle',tokens:'18K',share:'<1%',progress:0.86,speed:0.003}
       ];
       var ALERTS=[
-        {lv:'red',tx:'Hermes 等待写入权限'},
+        {lv:'red',tx:'Workbuddy 等待写入权限'},
         {lv:'yellow',tx:'Git 有 17 个文件未提交'},
-        {lv:'green',tx:'Claude 完成 context loader 重构'},
+        {lv:'green',tx:'Codex 完成 context loader 重构'},
         {lv:'blue',tx:'DeepSeek 新增 token 边界测试'}
       ];
       var TELE=[['TOKENS','2.35M','','pri'],['BURN','24.3K/min','','sec'],['COST','$0.92','','sec'],['ACTIVE','3','rc-lime','pri'],['PIT','1','rc-or','sec'],['ERROR','1','rc-or','sec'],['OUTPUT','3 commits / 4 docs','','pri']];
-      var LOGZ=[['22:31','CLAUDE','完成：重构 context loader'],['22:30','HERMES','等待权限：写入 /docs'],['22:30','CODEX','推送 3 个 commit'],['22:29','SYSTEM','工作区 17 个文件未提交'],['22:28','DEEPSEEK','新增 token 边界测试']];
+      var LOGZ=[['22:31','CODEX','完成：重构 context loader'],['22:30','WORKBUDDY','等待权限：写入 /docs'],['22:30','MUSE','推送 3 个 commit'],['22:29','SYSTEM','工作区 17 个文件未提交'],['22:28','DEEPSEEK','新增 token 边界测试']];
 
       // standings
       var standBox=document.getElementById('rcStand');
